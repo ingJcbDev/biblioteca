@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS fin -->
+
+    <!-- Optional JavaScript -->
+    <script src="../../bootstrap/4.5.0/js/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
+    <script src="../../bootstrap/4.5.0/js/popper.min.js" type="text/javascript"></script>
+    <script src="../../bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <!-- inicio url publica -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+    <!-- fin url publica -->
+
+    <link rel="stylesheet" href="dist/css/flatpickr.min.css">
+    <script src="dist/js/flatpickr.js"></script>
+    <script src="dist/l10n/es.js"></script>
+
+    <title>Flatpickr</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input_wrapper">
+                    <h1>flatpickr</h1>
+                    <br>
+                    <a href="https://flatpickr.js.org/">flatpickr</a>
+                    <br>
+                    <br>
+                    <br>
+                    <input id="calendar-tomorrow" class="flatpickr flatpickr-input active" type="text"
+                        placeholder="Select Date.." data-id="datetime" readonly="readonly">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        flatpickr('#calendar-tomorrow', {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            locale: "es"  // locale for this instance only
+        });
+    </script>
+
+</body>
+
+</html>
