@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="jquery-v1.12/css/jquery-ui.css" rel="stylesheet" />
+    <!-- Bootstrap CSS fin -->
+
+    <!-- Optional JavaScript -->
+    <!-- <script src="../../bootstrap/4.5.0/js/jquery-3.5.1.slim.min.js" type="text/javascript"></script> -->
+    <script src="../../bootstrap/4.5.0/js/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
+    <script src="../../bootstrap/4.5.0/js/popper.min.js" type="text/javascript"></script>
+    <script src="../../bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="jquery-v1.12/js/jquery-1.12.4.js"></script>
+    <script src="jquery-v1.12/js/jquery-ui.js"></script>
+    <!-- Optional JavaScript fin -->
+
+    <title>DateTime Picker</title>
+
+    <style>
+        .ui-datepicker-calendar {
+
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="" class="form-horizontal">
+            <fieldset>
+                <legend>Test</legend>
+
+                <h5>Datepicker <small class="h6">v1.9.0<small></h5>
+                <p class="lead">Bootstrap-datepicker provides a flexible datepicker widget in the Bootstrap style.</p>
+
+                <a href="https://jqueryui.com/datepicker/">Sitio Web</a>
+                <br>
+                
+                <input class='input-text' type='text' id='datepicker' name='datepicker'>
+                
+                <br>
+                <label for="startDate">Mes :</label>
+                <input name="startDate" id="startDate" class="displayNone" />                
+
+                <script>
+                    jQuery(function ($) {
+                        $.datepicker.regional['es'] = {
+                            closeText: 'Cerrar',
+                            prevText: '&#x3c;Ant',
+                            nextText: 'Sig&#x3e;',
+                            currentText: 'Hoy',
+                            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
+                                'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                            dayNames: ['Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles', 'Jueves', 'Viernes', 'S&aacute;bado'],
+                            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mi&eacute;', 'Juv', 'Vie', 'S&aacute;b'],
+                            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'S&aacute;'],
+                            weekHeader: 'Sm',
+                            dateFormat: 'dd/mm/yy',
+                            firstDay: 1,
+                            isRTL: false,
+                            showMonthAfterYear: false,
+                            yearSuffix: ''
+                        };
+                        $.datepicker.setDefaults($.datepicker.regional['es']);
+
+
+                    });
+
+                    $("#datepicker").datepicker({
+                    });
+
+                    $('#startDate').datepicker({
+                        changeMonth: false,
+                        changeYear: true,
+                        showButtonPanel: false,
+                        dateFormat: 'yy',
+                        onClose: function (dateText, inst) {
+                            $(this).datepicker('setDate', new Date(inst.selectedYear, 1));
+                        }
+                    });
+
+                </script>
+
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
