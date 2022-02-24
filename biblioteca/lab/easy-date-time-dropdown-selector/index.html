@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Bootstrap CSS -->
+		<link href="../../bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<!-- <link rel="stylesheet" href="css/animate.css/4.0.0/animate.min.css"/>         -->
+		<!-- Bootstrap CSS fin -->
+
+		<!-- Optional JavaScript -->
+		<script src="../../bootstrap/4.5.0/js/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
+		<script src="../../bootstrap/4.5.0/js/popper.min.js" type="text/javascript"></script>
+		<script src="../../bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="dist/jquery.datetimeselector.js" type="text/javascript"></script>
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+		<title>Animate CSS</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+            <h1>jQuery dateTimeSelector Plugin Examples</h1>
+            <div>
+                <h2>1. DateTime format 'Y-m-d H:i:s'</h2>
+                <p>
+                    <input type="text" id="example1" name="example1" class="form-control">
+                </p>
+                <span class="well">Result: ---------- --:--:--</span>
+                </div>
+                <div>
+                <h2>2. Date format 'd/m/Y'</h2>
+                <p>
+                    <input type="text" id="example2" name="example2" />
+                </p>
+                <span class="well">Result: --/--/----</span>
+                </div>
+                <div>
+                <h2>3. Time format 'H:i:s'</h2>
+                <p>
+                    <input type="text" id="example3" name="example3" />
+                </p>
+                <span class="well">Result: --:--:--</span>
+                </div>
+            </div>
+		</div>
+        
+	</body>
+	<script>
+		$(document).ready(function(){
+			$("#example1").dateTimeSelector({yearValue:''});
+			$("#example2").dateTimeSelector({format:'Y-m-d',yearValue:''});
+			$("#example3").dateTimeSelector({format:'H:i:s'});
+			
+			$(document).on("change", "select", function(){
+				var el = $(this).parents("div");
+				var val = el.children("p").children("input").val();
+				el.children("span").html("Result: " + val);
+			});
+		});
+		
+	</script>
+</html>
